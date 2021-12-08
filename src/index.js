@@ -98,7 +98,7 @@ function handleTypeSelect(e) {
 }
 
 function handleCitySubmit(e) {
-    const lowerCaseCityInput = cityInput.value.toLowerCase()
+
     e.preventDefault()
     clearBrewList()
     // reset other forms
@@ -107,20 +107,7 @@ function handleCitySubmit(e) {
     // -----------------
     fetch(breweryURL)
     .then(res => res.json())
-    .then(brewArray => {
-        let found = brewArray.find(brewObj => {
-            return lowerCaseCityInput === brewObj.city.toLowerCase()
-        })
-        if (typeof found === 'object') {
-            brewArray.map(brewObj => {
-                if (lowerCaseCityInput === brewObj.city.toLowerCase()) {
-                    renderBrews(brewObj)
-                }
-            })
-        } else {
-            renderNothing()
-        }
-    })
+    .then(brewArray => { filterCity(brewArray) })
 }
 
 // * HELPER FUNCTIONS
@@ -139,6 +126,22 @@ function filterData(brewArray, typeSelected) {
         })
     } else {
         // otherwise, display nothing found
+        renderNothing()
+    }
+}
+
+function filterCity(brewArray) {
+    const lowerCaseCityInput = cityInput.value.toLowerCase()
+    let found = brewArray.find(brewObj => {
+        return lowerCaseCityInput === brewObj.city.toLowerCase()
+    })
+    if (typeof found === 'object') {
+        brewArray.map(brewObj => {
+            if (lowerCaseCityInput === brewObj.city.toLowerCase()) {
+                renderBrews(brewObj)
+            }
+        })
+    } else {
         renderNothing()
     }
 }
