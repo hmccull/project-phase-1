@@ -94,23 +94,7 @@ function handleTypeSelect(e) {
     // -----------------
     fetch(breweryURL)
     .then(res => res.json())
-    .then(brewArray => {
-        // looks for a brewery object that matches selected brewery type
-            let found = brewArray.find(brewObj => {
-                return typeSelected === brewObj.brewery_type
-            })
-            if (typeof found === 'object') {
-                // if matching object is found, carry on!
-                brewArray.map(brewObj => {
-                    if (typeSelected === brewObj.brewery_type) {
-                        renderBrews(brewObj)
-                    }
-                })
-            } else {
-                // otherwise, display nothing found
-                renderNothing()
-            }
-        })
+    .then(brewArray => { filterData(brewArray, typeSelected) })
 }
 
 function handleCitySubmit(e) {
@@ -137,4 +121,24 @@ function handleCitySubmit(e) {
             renderNothing()
         }
     })
+}
+
+// * HELPER FUNCTIONS
+
+function filterData(brewArray, typeSelected) {
+    // looks for a brewery object that matches selected brewery type
+    let found = brewArray.find(brewObj => {
+        return typeSelected === brewObj.brewery_type
+    })
+    if (typeof found === 'object') {
+        // if matching object is found, carry on!
+        brewArray.map(brewObj => {
+            if (typeSelected === brewObj.brewery_type) {
+                renderBrews(brewObj)
+            }
+        })
+    } else {
+        // otherwise, display nothing found
+        renderNothing()
+    }
 }
