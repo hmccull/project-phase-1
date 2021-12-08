@@ -1,0 +1,125 @@
+/*
+* Color Palette
+ - Eggshell - #F8F4E3
+ - Timberwolf (tan) - #D4CDC3
+ - Timberwolf (grey) - #D5D0CD
+ - Artichoke - #A2A392
+ - Spanish Gray - #9A998C
+
+ * Fonts
+ - Sans-serif (i.e. Arial)
+*/
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.column {
+    flex: 50%;
+    padding: 10px;
+}
+
+.row {
+    display: flex;
+    margin-bottom: 100px;
+}
+
+h3 {
+    display: block;
+    letter-spacing: .4px;
+    color: #333;
+    font-size: x-large;
+}
+
+.hero-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://cdn.hopculture.com/wp-content/uploads/2020/10/GW-taproom-1.jpg");
+    background-position: center;
+    width: 100vw;
+    height: 70vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 3em;
+}
+
+#results-container {
+    margin-top: 75px;
+    margin-left: 60%;
+}
+
+#form-container, #filter-container {
+    margin-top: 75px;
+    margin-left: 20%;
+    margin-right: 40%;
+}
+
+label {
+    margin-top: 15px;
+    display: block;
+    color: #9A998C;
+}
+
+.bottom-labels {
+    margin-top: 40px;
+}
+
+ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+li {
+    list-style: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+input[value="city"], input[value="brewery"] {
+    color: #d7d7d7;
+    padding: 7px;
+    padding-right: 50px;
+}
+
+#search-btn {
+    border: none;
+    border-radius: 5px;
+    background-color: #A2A392;
+    color: #fff;
+    margin-top: 15px;
+    padding: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
+    letter-spacing: 1px;
+    text-align: center;
+    transition: all .2s ease-in-out;
+}
+
+#search-btn:hover {
+    background-color: #D4CDC3;
+    transform: scale(1.1);
+}
+
+#brew-list {
+    margin: 10px;
+}
+
+.footer {
+    margin-top: 100px;
+}
+
+#footer-text {
+    color: #9A998C;
+    text-align: center;
+    font-size: small;
+}

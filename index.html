@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Breweries</title>
+  <script defer src='src/index.js'></script>
+  <link href='style.css' rel='stylesheet'>
+</head>
+<body>
+
+  <!-- cover image -->
+  <div class='hero-image'>
+    <div class='hero-text'>
+      <h1>Brewery DB</h1>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class='row'>
+
+    <!-- left column -->
+    <div class='column'>
+      <!-- search results -->
+      <div id='results-container'>
+        <h3>Brewery List</h3>
+        <ul id='brew-list'></ul>
+      </div>
+    </div>
+
+    <!-- right column -->
+    <div class='column'>
+      <!-- filter by dropdown menus-->
+      <div id='filter-container'>
+        <h3>Filter Breweries</h3>
+        <!-- filter by state -->
+        <label for='filter-state'>By State</label>
+        <br>
+        <select id='states' name='states'>
+          <option value='default-option'>Select a state</option>
+          <option value='Arizona'>Arizona</option>
+          <option value='California'>California</option>
+          <option value='Colorado'>Colorado</option>
+          <option value='Idaho'>Idaho</option>
+          <option value='Indiana'>Indiana</option>
+          <option value='Massachusetts'>Massachusetts</option>
+          <option value='Minnesota'>Minnesota</option>
+          <option value='Nevada'>Nevada</option>
+          <option value='New York'>New York</option>
+          <option value='Oregon'>Oregon</option>
+          <option value='Texas'>Texas</option>
+          <option value='Washington'>Washington</option>
+        </select>
+        <br>
+        <!-- filter by city -->
+        <form id='city-form'>
+          <label class='bottom-labels' for='filter-city'>By City</label>
+          <br>
+          <input id='city-input' type='text' name='city' value='city'>
+          <br>
+          <input id='search-btn' type='submit' name='search' value='Search'>
+        </form>
+        <!-- filter by type -->
+        <label class='bottom-labels' for='filter-type'>By Type</label>
+        <br>
+        <select id='types' name='types'>
+          <option value='default-option'>Select a type</option>
+          <option value='micro'>Micro</option>
+          <option value='nano'>Nano</option>
+          <option value='regional'>Regional</option>
+          <option value='brewpub'>Brew Pub</option>
+          <option value='large'>Large</option>
+          <option value='planning'>Planning</option>
+          <option value='bar'>Bar</option>
+          <option value='contract'>Contracted</option>
+          <option value='proprietor'>Proprietor</option>
+          <option value='closed'>Closed</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <!-- footer -->
+  <div class='footer'>
+    <p id='footer-text'>
+      API provided by <a href="https://www.openbrewerydb.org/credits" target='blank'>Open Brewrey DB</a>
+      <br><br>
+      &copy; 2021 ItsJeri, hmccull, victoriag1
+    </p>
+  </div>
+</body>
+</html>
