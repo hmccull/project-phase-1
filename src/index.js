@@ -71,6 +71,16 @@ function renderNothing() {
     brewList.append(li);
 }
 
+function renderGoogleMap(e) {
+    const clickedLi = e.target
+    const clickedName = (clickedLi.innerText.replaceAll(' ', '+'));
+    const clickedCity = (clickedLi.city.replaceAll(' ', '+'));
+    const clickedState = (clickedLi.state.replaceAll(' ', '+'));
+    const map = document.createElement('span');
+    map.innerHTML = `<iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDxuQxHhftcqalr-VFxgiUIyfdHxjFKYVQ&q=${clickedName},${clickedCity},${clickedState}" width="100%" height="300" style="border:0;" allowfullscreen></iframe>`
+    modalText.append(map);
+}
+
 // * EVENT HANDLERS
 
 function clearBrewList() {
@@ -143,6 +153,7 @@ function handleModal(e) {
     p.innerText = `${clickedLi.street} \n${clickedLi.city}, ${clickedLi.state} \n${clickedLi.phone}`;
     modalText.append(h);
     modalText.append(p);
+    renderGoogleMap(e);
 }
 
 // * HELPER FUNCTIONS
