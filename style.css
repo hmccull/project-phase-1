@@ -28,7 +28,7 @@ body {
 h3 {
     display: block;
     letter-spacing: .4px;
-    color: #333;
+    color: #444;
     font-size: x-large;
 }
 
@@ -74,18 +74,32 @@ label {
     margin-top: 40px;
 }
 
+select {
+    cursor: pointer;
+}
+
 ul {
     padding: 0;
     list-style-type: none;
 }
 
 li {
+    color: #555;
     list-style: none;
     margin-top: 10px;
     margin-bottom: 10px;
+    cursor: pointer;
 }
 
-input[value="city"], input[value="brewery"] {
+li:hover, li:focus {
+    color: #A2A392;
+}
+
+input {
+    cursor: pointer;
+}
+
+input[value="city"] {
     color: #d7d7d7;
     padding: 7px;
     padding-right: 50px;
@@ -103,6 +117,7 @@ input[value="city"], input[value="brewery"] {
     letter-spacing: 1px;
     text-align: center;
     transition: all .2s ease-in-out;
+    cursor: pointer;
 }
 
 #search-btn:hover {
@@ -114,8 +129,55 @@ input[value="city"], input[value="brewery"] {
     margin: 10px;
 }
 
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 15%;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #F8F4E3;
+    margin: auto;
+    padding: 40px;
+    border-radius: 15px;
+    width: 40%;
+}
+
+.text {
+    font-size: large;
+    color: #555;
+    letter-spacing: .6px;
+    text-align: center;
+}
+
+.header {
+    color: #555;
+    letter-spacing: .6px;
+    text-align: center;
+}
+
+.close {
+    color: #A2A392;
+    float: right;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.close:hover, .close:focus {
+    color: #000;
+    text-decoration: none;
+}
+
 .footer {
     margin-top: 100px;
+    padding-bottom: 20px;
 }
 
 #footer-text {
