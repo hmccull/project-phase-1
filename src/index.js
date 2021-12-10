@@ -14,17 +14,6 @@ const span = document.querySelector('.close');
 const modalContent = document.querySelector('.modal-content');
 const modalText = document.querySelector('.modal-text');
 
-const newBreweryForm = document.querySelector('#new-brewery-form');
-const newName = document.querySelector('#new-name');
-const newBreweryType = document.querySelector('#new-brewery-type');
-const newStreet = document.querySelector('#new-street');
-const newCity = document.querySelector('#new-city');
-const newState = document.querySelector('#new-state');
-const newPostal = document.querySelector('#new-postal-code');
-const newCountry = document.querySelector('#new-country');
-const newPhone = document.querySelector('#new-phone');
-const newWebsite = document.querySelector('#new-website-url');
-
 // * EVENT LISTENERS
 
 document.addEventListener('DOMContentLoaded', (e) => {
